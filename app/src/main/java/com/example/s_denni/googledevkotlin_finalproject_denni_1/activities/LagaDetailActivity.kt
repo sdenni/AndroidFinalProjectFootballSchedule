@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -19,6 +20,7 @@ import org.jetbrains.anko.support.v4.swipeRefreshLayout
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.drawable.ic_add_to_favorites
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.drawable.ic_added_to_favorites
+import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.id.center_horizontal
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.id.nambihan_karesep
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.menu.detail_menu
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.databases.database
@@ -26,6 +28,8 @@ import com.example.s_denni.googledevkotlin_finalproject_denni_1.models.*
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.networks.DataRepository
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.presenters.DetailKlubPresenter
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.tools.invisible
+import com.example.s_denni.googledevkotlin_finalproject_denni_1.tools.ubahFormatTanggal
+import com.example.s_denni.googledevkotlin_finalproject_denni_1.tools.ubahFormatWaktu
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.tools.visible
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
@@ -49,6 +53,7 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
     private lateinit var dataof_katuhuKlubData: KlubSepakBola
 
     private lateinit var tv_tanggalmaen: TextView
+    private lateinit var tv_waktumaen: TextView
 
     private lateinit var iv_klub_c: ImageView
     private lateinit var iv_klub_k: ImageView
@@ -88,10 +93,27 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
                 text = "Tanggal"
                 id = R.id.tanggalMaen
                 textSize = 20f
-                textAlignment = left
+                gravity = center_horizontal
+                textColor =  ContextCompat.getColor(context,R.color.colorSoftText)
+                backgroundColor = ContextCompat.getColor(context,R.color.colorPrimaryDark)
             }.lparams{
                 margin = dip(3)
+                width = matchParent
+                height = wrapContent
             }
+
+                    textView {
+                        text = "Waktu"
+                        id = R.id.waktuMaen
+                        textSize = 20f
+                        gravity = center_horizontal
+                        textColor =  ContextCompat.getColor(context,R.color.colorSoftText)
+                        backgroundColor = ContextCompat.getColor(context,R.color.colorPrimaryDark)
+                    }.lparams{
+                        margin = dip(3)
+                        width = matchParent
+                        height = wrapContent
+                    }
 
             swipeRefresh = swipeRefreshLayout {
 
@@ -471,6 +493,7 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
         }
 
         tv_tanggalmaen = find(R.id.tanggalMaen)
+        tv_waktumaen = find(R.id.waktuMaen)
 
         iv_klub_c = find(R.id.image_klub_c)
         iv_klub_k = find(R.id.image_klub_k)
@@ -601,7 +624,11 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
         dataof_kencaKlubData = kencaKlubData.teams[0]
         dataof_katuhuKlubData = katuhuKlubData.teams[0]
 
-        tv_tanggalmaen.text = dataof_myLagaInfo.tanggalNa
+        val date_string = myLagaInfo.events[0].tanggalNa?.let { ubahFormatTanggal(it) }
+        val time_string = myLagaInfo.events[0].timeNa?.let { ubahFormatWaktu(it) }
+
+        tv_tanggalmaen.text = date_string
+        tv_waktumaen.text = time_string
 
         tv_kenca.text = dataof_kencaKlubData.teamName
         tv_katuhu.text = dataof_katuhuKlubData.teamName

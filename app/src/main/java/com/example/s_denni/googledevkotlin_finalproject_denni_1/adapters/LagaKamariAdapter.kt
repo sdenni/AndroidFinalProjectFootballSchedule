@@ -1,5 +1,6 @@
 package com.example.s_denni.googledevkotlin_finalproject_denni_1.adapters
 
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
@@ -64,23 +65,36 @@ class KamariUI : AnkoComponent<ViewGroup> {
                 lparams(width = matchParent, height = wrapContent)
                 id = R.id.main_layout
                 padding = dip(5)
-//                backgroundColor = R.color.colorAccent
                 orientation = LinearLayout.VERTICAL
 
-                textView() {
+                textView {
                     text = "tanggal"
                     id = R.id.tanggalMaen
                     textSize = 20f
+                    gravity = R.id.center_horizontal
+                    backgroundColor = ContextCompat.getColor(context,R.color.colorChoosen)
+                }.lparams {
+                    width = matchParent
+                    height = wrapContent
+
                 }
 
-                textView() {
+                textView {
                     text = "waktu"
                     id = R.id.waktuMaen
                     textSize = 20f
+                    gravity = R.id.center_horizontal
+                    backgroundColor = ContextCompat.getColor(context,R.color.colorChoosen)
+                }.lparams {
+                    width = matchParent
+                    height = wrapContent
+
                 }
 
-                linearLayout() {
+                linearLayout {
                     orientation = LinearLayout.HORIZONTAL
+                    gravity = R.id.center_horizontal
+                    backgroundColor = ContextCompat.getColor(context,R.color.colorPrimaryDark)
 
                     linearLayout() {
                         lparams(width = 0, height = wrapContent, weight = 0.4F)
@@ -90,19 +104,25 @@ class KamariUI : AnkoComponent<ViewGroup> {
                             text = "Kenca Club"
                             id = R.id.kenca_club
                             textSize = 16f
-                            textAlignment = left
+                            gravity = R.id.center_horizontal
+                            textColor =  ContextCompat.getColor(context,R.color.colorSoftText)
                         }.lparams{
                             margin = dip(3)
+                            width = matchParent
                         }
 
                         textView {
                             text = "scr"
                             id = R.id.kenca_club_scr
                             textSize = 16f
-                            textAlignment = right
+                            gravity = R.id.center_horizontal
+                            textColor =  ContextCompat.getColor(context,R.color.colorSoftText)
                         }.lparams{
                             margin = dip(2)
+                            width = matchParent
                         }
+                    }.lparams{
+                        //                        width = matchParent
                     }
 
                     linearLayout(){
@@ -110,9 +130,14 @@ class KamariUI : AnkoComponent<ViewGroup> {
                         textView {
                             text = "VS"
                             textSize = 20f
+                            gravity = R.id.center_horizontal
+                            textColor =  ContextCompat.getColor(context,R.color.colorSoftText)
                         }.lparams{
                             margin = dip(5)
+                            width = matchParent
                         }
+                    }.lparams{
+                        //                        width = matchParent
                     }
 
                     linearLayout() {
@@ -123,20 +148,31 @@ class KamariUI : AnkoComponent<ViewGroup> {
                             text = "scr"
                             id = R.id.katuhu_club_scr
                             textSize = 16f
-                            textAlignment = left
+                            gravity = R.id.center_horizontal
+                            textColor =  ContextCompat.getColor(context,R.color.colorSoftText)
                         }.lparams{
                             margin = dip(2)
+                            width = matchParent
                         }
 
                         textView {
                             text = "Katuhu Klub"
                             id = R.id.katuhu_club
                             textSize = 16f
-                            textAlignment = right
+                            gravity = R.id.center_horizontal
+                            textColor =  ContextCompat.getColor(context,R.color.colorSoftText)
                         }.lparams{
                             margin = dip(5)
+                            width = matchParent
                         }
+                    }.lparams{
+                        //                        width = matchParent
                     }
+                }.lparams{
+                    width = matchParent
+                    leftMargin = dip(5)
+                    rightMargin = dip(5)
+                    bottomMargin = dip(15)
                 }
             }
         }
