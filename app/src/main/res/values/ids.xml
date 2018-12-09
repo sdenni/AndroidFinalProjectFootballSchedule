@@ -27,7 +27,6 @@
     <item name="list_team" type="id"/>
     <item name="spinner" type="id"/>
     <item name="list_laga_kareseps" type="id"/>
-    <item name="timDetViewPager" type="id"/>
     <item name="deskripsi" type="id"/>
     <item name="playerName" type="id"/>
     <item name="reusable_view" type="id"/>

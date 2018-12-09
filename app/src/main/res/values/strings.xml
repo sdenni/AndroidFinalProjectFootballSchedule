@@ -1,11 +1,5 @@
 <resources>
     <string name="app_name">Laga Bola</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="karesep">Karesep</string>
-    <string name="next">Laga Enjing</string>
-    <string name="last">Laga Kamari</string>
     <string name="favorites">favorite</string>
     <string name="matchs_b">Pertandingan</string>
     <string name="teams_b">Klub</string>
@@ -18,8 +12,6 @@
     <string name="desk_t">Deskripsi</string>
     <string name="search_title">Pencarian</string>
     <string name="klubheader">Daftar Klub</string>
-
-    <string name="def_selected_club">English Premier League</string>
 
     <string name="key_team_selected">team_selected</string>
     <string name="key_id_player">id_player</string>
