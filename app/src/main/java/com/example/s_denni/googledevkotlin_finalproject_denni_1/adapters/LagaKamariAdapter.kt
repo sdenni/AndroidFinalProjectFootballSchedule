@@ -8,6 +8,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.models.MyLaga
+import com.example.s_denni.googledevkotlin_finalproject_denni_1.tools.ubahFormatTanggal
+import com.example.s_denni.googledevkotlin_finalproject_denni_1.tools.ubahFormatWaktu
 import org.jetbrains.anko.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -30,6 +32,7 @@ class KamariViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
     public val main_layout: LinearLayout = view.find(R.id.main_layout)
     private val tanggalMaen: TextView = view.find(R.id.tanggalMaen)
+    private val waktuMaen: TextView = view.find(R.id.waktuMaen)
     private val klubKenca: TextView = view.find(R.id.kenca_club)
     private val klubKatuhu: TextView = view.find(R.id.katuhu_club)
     private val klubScoreKenca: TextView = view.find(R.id.kenca_club_scr)
@@ -37,18 +40,15 @@ class KamariViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
     fun bindItem(laga: MyLaga, listener: (MyLaga) -> Unit) {
 
-        val string = laga.tanggalNa
-        val format = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
-        val date: Date = format.parse(string)
+//        Log.d("TRACE", "Laga Kamari")
+//        Log.d("TRACE", laga.tanggalNa)
+//        Log.d("TRACE", laga.timeNa)
 
-        val pattern = "EEEE, dd-MMM-yyyy"
-        val simpleDateFormat = SimpleDateFormat(pattern)
+//        val date_string = ubahFormatTanggal(laga.tanggalNa)
+//        val time_string = ubahFormatWaktu(laga.timeNa.let { it.toString() })
 
-        val date_string = simpleDateFormat.format(date)
-
-//        var informasiLagaClass = Information(laga.idKlubKenca,laga.idKlubKatuhu)
-
-        tanggalMaen.text = date_string
+//        tanggalMaen.text = date_string
+//        waktuMaen.text = time_string
         klubKenca.text = laga.lagaKlubNameKenca
         klubKatuhu.text = laga.lagaKlubNameKatuhu
         klubScoreKenca.text = laga.lagaHasilKenca
@@ -77,6 +77,12 @@ class KamariUI : AnkoComponent<ViewGroup> {
                 textView() {
                     text = "tanggal"
                     id = R.id.tanggalMaen
+                    textSize = 20f
+                }
+
+                textView() {
+                    text = "waktu"
+                    id = R.id.waktuMaen
                     textSize = 20f
                 }
 

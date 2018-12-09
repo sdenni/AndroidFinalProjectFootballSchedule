@@ -1,15 +1,15 @@
 package com.example.s_denni.googledevkotlin_finalproject_denni_1.adapters
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.models.MyLaga
+import com.example.s_denni.googledevkotlin_finalproject_denni_1.tools.*
 import org.jetbrains.anko.*
-import java.text.SimpleDateFormat
-import java.util.*
 
 class LagaEnjingAdapter (private val lagas: List<MyLaga>, private val listener: (MyLaga) -> Unit)
     : RecyclerView.Adapter<EnjingViewHolder>(){
@@ -29,6 +29,7 @@ class EnjingViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
     public val main_layout: LinearLayout = view.find(R.id.main_layout)
     private val tanggalMaen: TextView = view.find(R.id.tanggalMaen)
+    private val waktuMaen: TextView = view.find(R.id.waktuMaen)
     private val klubKenca: TextView = view.find(R.id.kenca_club)
     private val klubKatuhu: TextView = view.find(R.id.katuhu_club)
     private val klubScoreKenca: TextView = view.find(R.id.kenca_club_scr)
@@ -36,25 +37,27 @@ class EnjingViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
     fun bindItem(laga: MyLaga, listener: (MyLaga) -> Unit) {
 
-        val string = laga.tanggalNa
-        val format = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
-        val date: Date = format.parse(string)
+//        Log.d("TRACE", "Laga Enjing")
+//        Log.d("TRACE", laga.tanggalNa)
+//        Log.d("TRACE", laga.timeNa)
 
-        val pattern = "EEEE, dd-MMM-yyyy"
-        val simpleDateFormat = SimpleDateFormat(pattern)
+//        val date_string = ubahFormatTanggal(laga.tanggalNa)
+//        val time_string = ubahFormatWaktu(laga.timeNa.let { it.toString() })
 
-        val date_string = simpleDateFormat.format(date)
+//        val datetime_string = laga.tanggalNa?.let { laga.timeNa?.let { it1 -> toGMTFormat(it, it1) } }
+//
+//        val date_string = fromGMTtoDate(datetime_string.toString())
+//        val time_string = fromGMTtoTime(datetime_string.toString())
 
-//        var informasiLagaClass = Information(laga.idKlubKenca,laga.idKlubKatuhu)
+        val date_string = laga.tanggalNa?.let { ubahFormatTanggal(it) }
+        val time_string = laga.timeNa?.let { ubahFormatWaktu(it) }
 
-        tanggalMaen.text = date_string
+        tanggalMaen.text = date_string.toString()
+        waktuMaen.text = time_string.toString()
         klubKenca.text = laga.lagaKlubNameKenca
         klubKatuhu.text = laga.lagaKlubNameKatuhu
         klubScoreKenca.text = laga.lagaHasilKenca
         klubScoreKatuhu.text = laga.lagaHasilKatuhu
-
-//        LastMatchAdapter.lagaKamari = laga
-//        LastMatchAdapter.informasiLaga = informasiLagaClass
 
         itemView.setOnClickListener { listener(laga) }
     }
@@ -71,13 +74,19 @@ class EnjingUI : AnkoComponent<ViewGroup> {
 //                backgroundColor = R.color.colorAccent
                 orientation = LinearLayout.VERTICAL
 
-                textView() {
+                textView {
                     text = "tanggal"
                     id = R.id.tanggalMaen
                     textSize = 20f
                 }
 
-                linearLayout() {
+                textView {
+                    text = "waktu"
+                    id = R.id.waktuMaen
+                    textSize = 20f
+                }
+
+                linearLayout {
                     orientation = LinearLayout.HORIZONTAL
 
                     linearLayout() {

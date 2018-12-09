@@ -34,4 +34,5 @@
     <item name="playerIco" type="id"/>
     <item name="playerPos" type="id"/>
     <item name="list_nextMatch" type="id"/>
+    <item name="waktuMaen" type="id"/>
 </resources>

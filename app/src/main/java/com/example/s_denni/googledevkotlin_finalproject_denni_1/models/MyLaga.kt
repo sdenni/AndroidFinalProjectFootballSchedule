@@ -25,6 +25,9 @@ data class MyLaga (
     @SerializedName("dateEvent")
     var tanggalNa: String? = null,
 
+    @SerializedName("strTime")
+    var timeNa: String? = null,
+
     @SerializedName("idHomeTeam")
     var idKlubKenca: String? = null,
 
