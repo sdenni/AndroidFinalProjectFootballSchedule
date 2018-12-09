@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+              android:paddingTop="15dp"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="125dp" app:srcCompat="@mipmap/ic_launcher" android:id="@+id/iv_playerBackground"/>
+    <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+    <TextView
+            android:text="Neur"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/tv_player_name"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="1">
+            <TextView
+                    android:text="Weight"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tv_player_w2" android:layout_weight="1"/>
+            <TextView
+                    android:text="TextView"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tv_player_w" android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:layout_weight="1">
+            <TextView
+                    android:text="Height"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tv_player_h2" android:layout_weight="1"/>
+            <TextView
+                    android:text="TextView"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tv_player_h" android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+    <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content" android:id="@+id/tv_player_pos"/>
+
+    <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
+    <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"/>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/tv_player_desc"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

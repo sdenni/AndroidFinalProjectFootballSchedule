@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="main_layout" type="id"/>
+    <item name="tanggalMaen" type="id"/>
+    <item name="kenca_club" type="id"/>
+    <item name="kenca_club_scr" type="id"/>
+    <item name="katuhu_club_scr" type="id"/>
+    <item name="katuhu_club" type="id"/>
+    <item name="image_klub_c" type="id"/>
+    <item name="image_klub_k" type="id"/>
+    <item name="goals_details_c" type="id"/>
+    <item name="goals_details_k" type="id"/>
+    <item name="shots_c" type="id"/>
+    <item name="shots_k" type="id"/>
+    <item name="goal_keeper_c" type="id"/>
+    <item name="goal_keeper_k" type="id"/>
+    <item name="defense_c" type="id"/>
+    <item name="defense_k" type="id"/>
+    <item name="midfield_c" type="id"/>
+    <item name="midfield_k" type="id"/>
+    <item name="forward_c" type="id"/>
+    <item name="forward_k" type="id"/>
+    <item name="substitute_c" type="id"/>
+    <item name="substitute_k" type="id"/>
+    <item name="team_name" type="id"/>
+    <item name="team_badge" type="id"/>
+    <item name="list_team" type="id"/>
+    <item name="spinner" type="id"/>
+    <item name="list_laga_kareseps" type="id"/>
+    <item name="timDetViewPager" type="id"/>
+    <item name="deskripsi" type="id"/>
+    <item name="playerName" type="id"/>
+    <item name="reusable_view" type="id"/>
+    <item name="playerIco" type="id"/>
+    <item name="playerPos" type="id"/>
+    <item name="list_nextMatch" type="id"/>
+</resources>

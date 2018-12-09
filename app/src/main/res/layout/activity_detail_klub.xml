@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/swiperefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <ScrollView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout android:padding="10dp" android:layout_width="match_parent" android:layout_height="match_parent"
+                          android:orientation="vertical">
+
+                <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp" app:srcCompat="@mipmap/ic_launcher"
+                        android:id="@+id/team_badge"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/team_name"/>
+
+                <TextView
+                        android:layout_gravity="center"
+                        android:textSize="30dp"
+                        android:text="TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/team_name" app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/team_badge"/>
+
+                <TextView
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/tv_tahun"/>
+                <TextView
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="TextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/tv_stadion"/>
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                              xmlns:app="http://schemas.android.com/apk/res-auto"
+                              xmlns:tools="http://schemas.android.com/tools"
+                              android:layout_width="match_parent"
+                              android:layout_height="match_parent"
+                              android:orientation="vertical"
+                              tools:context=".MainActivity">
+
+                    <android.support.design.widget.TabLayout
+                            android:id="@+id/tabs_main"
+                            android:layout_width="match_parent"
+                            android:layout_height="53dp"
+                            app:tabMode="fixed"/>
+
+                    <android.support.v4.view.ViewPager
+                            android:id="@+id/viewpager_main"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
+
+                </LinearLayout>
+
+                <ProgressBar
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progressBar"/>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+    <!--<TextView-->
+    <!--android:text="TextView"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content" tools:layout_editor_absoluteY="169dp"-->
+    <!--tools:layout_editor_absoluteX="15dp" android:id="@+id/textView2"/>-->
+</android.support.constraint.ConstraintLayout>
