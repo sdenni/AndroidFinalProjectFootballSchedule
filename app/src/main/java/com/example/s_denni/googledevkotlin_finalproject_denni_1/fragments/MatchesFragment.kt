@@ -10,20 +10,12 @@ import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.string.last_ma
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.string.next_matches_t
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.adapters.MyFragmentPagerAdapter
 import kotlinx.android.synthetic.main.fragment_pertandingan.*
-import org.jetbrains.anko.spinner
 
 class MatchesFragment: Fragment() {
 
     private lateinit var myView: View
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
-//    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-//        return super.onCreateView(inflater, container, savedInstanceState)
-//        setContentView(R.layout.activity_main)
 
         myView = inflater?.inflate(R.layout.fragment_pertandingan, container, false)
 

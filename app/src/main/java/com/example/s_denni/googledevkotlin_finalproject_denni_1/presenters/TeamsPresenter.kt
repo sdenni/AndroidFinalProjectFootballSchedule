@@ -1,6 +1,5 @@
 package com.example.s_denni.googledevkotlin_finalproject_denni_1.presenters
 
-import android.util.Log
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.interfaces.TeamsView
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.models.KlubSepakBolaResponse
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.networks.DataRepository
@@ -18,9 +17,6 @@ class TeamsPresenter(private val view: TeamsView,
         view.showLoading()
 
         GlobalScope.launch (context.main){
-//            Log.d("TRACE", TheSportDBApi.getTeams(league))
-
-//            val data = null
             if(isLeague.let { it == true }){
                 val data = gson.fromJson(apiRepository
                     .machenRequest(TheSportDBApi.getTeams(strSearch)).await(),
@@ -32,8 +28,6 @@ class TeamsPresenter(private val view: TeamsView,
                     KlubSepakBolaResponse::class.java)
                 view.showTeamList(data.teams)
             }
-
-//            view.showTeamList(data.teams)
             view.hideLoading()
         }
     }

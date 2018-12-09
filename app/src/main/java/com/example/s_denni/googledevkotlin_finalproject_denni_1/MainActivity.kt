@@ -2,7 +2,6 @@ package com.example.s_denni.googledevkotlin_finalproject_denni_1
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.layout.activity_main
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.id.*
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.fragments.FavoritesFragment
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.fragments.MatchesFragment

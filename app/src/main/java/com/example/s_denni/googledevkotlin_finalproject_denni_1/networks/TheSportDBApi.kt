@@ -5,7 +5,6 @@ import com.example.s_denni.googledevkotlin_finalproject_denni_1.BuildConfig
 
 class TheSportDBApi {
 
-//    DIRAPIHKAN
     companion object {
 
         fun getTeams(league: String?): String {
@@ -43,22 +42,6 @@ class TheSportDBApi {
                 .build()
                 .toString()
         }
-
-//        fun getTeamDetail(teamId: String?): String{
-//            return BuildConfig.BASE_URL + "api/v1/json/${BuildConfig.TSDB_API_KEY}" + "/lookupteam.php?id=" + teamId
-//        }
-
-//        fun nimmTeams(league: String = "German Bundesliga"): String {
-//            return Uri.parse(BuildConfig.BASE_URL).buildUpon()
-//                    .appendPath("api")
-//                    .appendPath("v1")
-//                    .appendPath("json")
-//                    .appendPath(BuildConfig.TSDB_API_KEY)
-//                    .appendPath("search_all_teams.php")
-//                    .appendQueryParameter("l", league)
-//                    .build()
-//                    .toString()
-//        }
 
         fun nimmMatch(id_schedule: String?): String {
             return Uri.parse(BuildConfig.BASE_URL).buildUpon()
@@ -108,20 +91,7 @@ class TheSportDBApi {
                 .toString()
         }
 
-//        fun nimmPlayerKlub(data: String?): String {
-//            return Uri.parse(BuildConfig.BASE_URL).buildUpon()
-//                .appendPath("api")
-//                .appendPath("v1")
-//                .appendPath("json")
-//                .appendPath(BuildConfig.TSDB_API_KEY)
-//                .appendPath("lookupteam.php")
-//                .appendQueryParameter("id", data)
-//                .build()
-//                .toString()
-//        }
-
         fun nimmPlayerKlub(KlubName: String?): String {
-//            var data = "Arsenal"
             return Uri.parse(BuildConfig.BASE_URL).buildUpon()
                 .appendPath("api")
                 .appendPath("v1")

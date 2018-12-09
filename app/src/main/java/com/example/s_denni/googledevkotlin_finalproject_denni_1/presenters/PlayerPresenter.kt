@@ -1,6 +1,5 @@
 package com.example.s_denni.googledevkotlin_finalproject_denni_1.presenters
 
-import android.util.Log
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.interfaces.PlayerView
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.models.ListOfPlayer
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.networks.DataRepository
@@ -19,7 +18,6 @@ class PlayerPresenter (private val view: PlayerView,
         view.showLoading()
 
         GlobalScope.launch (context.main){
-//            Log.d("TRACE", TheSportDBApi.nimmPlayerKlub(klubName))
             val data = gson.fromJson(apiRepository
                 .machenRequest(TheSportDBApi.nimmPlayerKlub(klubName)).await(),
                 ListOfPlayer::class.java)

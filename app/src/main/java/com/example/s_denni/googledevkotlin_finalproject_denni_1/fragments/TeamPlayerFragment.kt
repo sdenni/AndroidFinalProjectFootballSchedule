@@ -4,10 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,11 +46,9 @@ class TeamPlayerFragment : Fragment(), AnkoComponent<Context>, PlayerView {
 
     lateinit var team_name : String
 
-    lateinit var selected_team : TextView
-
     override fun onAttach(context: Context?) {
         super.onAttach(context)
-        arguments?.getString("team_selected")?.let {
+        arguments?.getString(resources.getString(R.string.key_team_selected))?.let {
             team_name = it
         }
     }
@@ -64,7 +59,7 @@ class TeamPlayerFragment : Fragment(), AnkoComponent<Context>, PlayerView {
         reusableView = find(R.id.reusable_view)
 
         adapterPlayer = PlayerAdapter(players) {
-            context?.startActivity<PlayerDetailActivity>("id_player" to "${it.idPlayer}")
+            context?.startActivity<PlayerDetailActivity>(resources.getString(R.string.key_id_player) to "${it.idPlayer}")
         }
 
         reusableView.adapter = adapterPlayer
@@ -79,11 +74,6 @@ class TeamPlayerFragment : Fragment(), AnkoComponent<Context>, PlayerView {
     }
 
     override fun createView(ui: AnkoContext<Context>): View = with(ui){
-
-//        val intent = intent
-//        idSchedule = intent.getStringExtra("id_schedule")
-//        supportActionBar?.title = "Laga Informasi"
-//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         linearLayout {
             lparams (width = matchParent, height = wrapContent)

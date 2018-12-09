@@ -25,8 +25,6 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerDetailView{
     private lateinit var presenter: DetailPlayerPresenter
     private lateinit var player: Player
     private lateinit var progressBar: ProgressBar
-    //    private lateinit var swipeRefresh: SwipeRefreshLayout
-
 
     private lateinit var playerBackgroud: ImageView
     private lateinit var playerName: TextView
@@ -73,9 +71,6 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerDetailView{
     }
     override fun showEventList(playerData: ListOfPlayers) {
 
-//        Log.d("TRACE", "Some data "+id)
-//        Log.d("TRACE", "Some data "+playerData.players[0].strName)
-
         var myPlayer: Player = playerData.players[0]
 
         Picasso.get().load(myPlayer.background_image).into(playerBackgroud)
@@ -96,10 +91,5 @@ class PlayerDetailActivity : AppCompatActivity(), PlayerDetailView{
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-//    override fun showTeamDetail(data: List<Player>) {
-//
-//
-//    }
 
 }

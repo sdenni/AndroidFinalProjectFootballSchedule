@@ -40,22 +40,15 @@ class KamariViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
     fun bindItem(laga: MyLaga, listener: (MyLaga) -> Unit) {
 
-//        Log.d("TRACE", "Laga Kamari")
-//        Log.d("TRACE", laga.tanggalNa)
-//        Log.d("TRACE", laga.timeNa)
+        val date_string = laga.tanggalNa?.let { ubahFormatTanggal(it) }
+        val time_string = laga.timeNa?.let { ubahFormatWaktu(it) }
 
-//        val date_string = ubahFormatTanggal(laga.tanggalNa)
-//        val time_string = ubahFormatWaktu(laga.timeNa.let { it.toString() })
-
-//        tanggalMaen.text = date_string
-//        waktuMaen.text = time_string
+        tanggalMaen.text = date_string.toString()
+        waktuMaen.text = time_string.toString()
         klubKenca.text = laga.lagaKlubNameKenca
         klubKatuhu.text = laga.lagaKlubNameKatuhu
         klubScoreKenca.text = laga.lagaHasilKenca
         klubScoreKatuhu.text = laga.lagaHasilKatuhu
-
-//        LastMatchAdapter.lagaKamari = laga
-//        LastMatchAdapter.informasiLaga = informasiLagaClass
 
         itemView.setOnClickListener {
             listener(laga)

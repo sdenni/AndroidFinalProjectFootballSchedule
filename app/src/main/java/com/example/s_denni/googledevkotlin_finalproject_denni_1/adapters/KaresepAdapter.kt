@@ -28,7 +28,7 @@ class KaresepAdapter(private val karesep: List<Kareseps>, private val listener: 
 
 class KaresepViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
-    public val main_layout: LinearLayout = view.find(R.id.main_layout)
+    val main_layout: LinearLayout = view.find(R.id.main_layout)
     private val tanggalMaen: TextView = view.find(R.id.tanggalMaen)
     private val klubKenca: TextView = view.find(R.id.kenca_club)
     private val klubKatuhu: TextView = view.find(R.id.katuhu_club)

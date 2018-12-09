@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.s_denni.googledevkotlin_finalproject_denni_1.R
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.activities.TeamDetailActivity
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.adapters.TeamsFavoriteAdapter
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.databases.database
@@ -30,7 +31,7 @@ class TeamsFavoriteFragment : Fragment(), AnkoComponent<Context> {
         super.onActivityCreated(savedInstanceState)
 
         adapter = TeamsFavoriteAdapter(favorites){
-            context?.startActivity<TeamDetailActivity>("id" to "${it.teamId}")
+            context?.startActivity<TeamDetailActivity>(resources.getString(R.string.key_id) to "${it.teamId}")
         }
 
         listTeam.adapter = adapter

@@ -11,12 +11,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
-        <ScrollView
-
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            <LinearLayout android:padding="10dp" android:layout_width="match_parent" android:layout_height="match_parent"
+            <LinearLayout android:paddingTop="10dp"
+                          android:paddingRight="10dp"
+                          android:paddingLeft="10dp"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
                           android:orientation="vertical">
 
                 <ImageView
@@ -68,8 +67,8 @@
                     <android.support.v4.view.ViewPager
                             android:id="@+id/viewpager_main"
                             android:layout_width="match_parent"
-                            android:layout_height="300dp"
-                            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="5dp" app:layout_constraintBottom_toBottomOf="parent"/>
 
                 </LinearLayout>
 
@@ -80,7 +79,6 @@
                         android:id="@+id/progressBar"/>
             </LinearLayout>
 
-        </ScrollView>
 
     </android.support.v4.widget.SwipeRefreshLayout>
 

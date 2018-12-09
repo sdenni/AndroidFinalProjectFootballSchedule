@@ -205,10 +205,7 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
         swipeRefresh.isRefreshing = false
         Picasso.get().load(data[0].teamBadge).into(teamBadge)
         teamName.text = data[0].teamName
-//        teamDescription.text = data[0].teamDescription
         team_desk = data[0].teamDescription
-//        teamFormedYear.text = data[0].teamFormedYear
-//        teamStadium.text = data[0].teamStadium
         klub_name = data[0].teamName
         teamFormedYear.text = data[0].teamFormedYear
         teamStadium.text = data[0].teamStadium

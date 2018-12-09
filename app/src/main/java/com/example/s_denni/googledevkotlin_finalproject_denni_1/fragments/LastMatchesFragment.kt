@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.*
 import android.widget.*
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R
@@ -31,8 +30,9 @@ class LastMatchesFragment : Fragment(), AnkoComponent<Context>, MyLagaView {
     private lateinit var progressBar: ProgressBar
     private lateinit var swipeRefresh: SwipeRefreshLayout
     private lateinit var spinner: Spinner
-    private var leagueName: String = "German Bundesliga"
-    private lateinit var textView: TextView
+//    private var leagueName: String = resources.getString(R.string.def_selected_club)
+    private var leagueName: String = "English Premier League"
+    private var leagueId: String = "4328"
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -51,7 +51,6 @@ class LastMatchesFragment : Fragment(), AnkoComponent<Context>, MyLagaView {
         val request = DataRepository()
         val gson = Gson()
         presenter = LagaKamariPresenter(this, request, gson)
-//        presenter.nimmLagaKamari()
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 leagueName = spinner.selectedItem.toString()
@@ -68,7 +67,6 @@ class LastMatchesFragment : Fragment(), AnkoComponent<Context>, MyLagaView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        (activity as AppCompatActivity).supportActionBar?.title = "Daftar Klub"
         setHasOptionsMenu(true)
     }
 
@@ -83,7 +81,13 @@ class LastMatchesFragment : Fragment(), AnkoComponent<Context>, MyLagaView {
             }
 
             override fun onQueryTextChange(query: String?): Boolean {
-                presenter.nimmLagaKamari(query, false)
+                if (query != null) {
+                    if(query.trim().equals("")){
+                        presenter.nimmLagaKamari(leagueId, true)
+                    } else {
+                        query?.let { presenter.nimmLagaKamari(it, false) }
+                    }
+                }
                 return true
             }
         })

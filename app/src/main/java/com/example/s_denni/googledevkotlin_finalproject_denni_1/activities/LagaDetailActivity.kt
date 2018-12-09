@@ -44,10 +44,6 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
     private lateinit var progressBar: ProgressBar
     private lateinit var swipeRefresh: SwipeRefreshLayout
 
-//    myLagaInfo: ListOfMyLaga,
-//    kencaKlubData: KlubSepakBolaResponse,
-//    katuhuKlubData: KlubSepakBolaResponse
-
     private lateinit var dataof_myLagaInfo: MyLaga
     private lateinit var dataof_kencaKlubData: KlubSepakBola
     private lateinit var dataof_katuhuKlubData: KlubSepakBola
@@ -98,12 +94,6 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
             }
 
             swipeRefresh = swipeRefreshLayout {
-//                                setColorSchemeResources(
-//                    colorAccent,
-//                    android.R.color.holo_green_light,
-//                    android.R.color.holo_orange_light,
-//                    android.R.color.holo_red_light
-//                )
 
                 scrollView {
                     isVerticalScrollBarEnabled = false
@@ -161,10 +151,8 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
                             }
                         }
 
-                        /// #1--- //
-
-                        linearLayout(){
-                            linearLayout(){
+                        linearLayout{
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.4F)
                                 padding = dip(1)
 
@@ -178,17 +166,17 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
                                 }
 
                             }
-                            linearLayout(){
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.2F)
                                 padding = dip(1)
 
-                                textView(){
+                                textView{
                                     text = "Goals"
                                     textSize = 20f
                                 }
 
                             }
-                            linearLayout(){
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.4F)
                                 padding = dip(1)
 
@@ -206,8 +194,8 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
 
                         // --- //
 
-                        linearLayout(){
-                            linearLayout(){
+                        linearLayout{
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.4F)
                                 padding = dip(1)
 
@@ -221,17 +209,17 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
                                 }
 
                             }
-                            linearLayout(){
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.2F)
                                 padding = dip(1)
 
-                                textView(){
+                                textView{
                                     text = "Shots"
                                     textSize = 20f
                                 }
 
                             }
-                            linearLayout(){
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.4F)
                                 padding = dip(1)
 
@@ -256,8 +244,8 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
                             margin = dip(3)
                         }
 
-                        linearLayout(){
-                            linearLayout(){
+                        linearLayout{
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.4F)
                                 padding = dip(1)
 
@@ -271,17 +259,17 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
                                 }
 
                             }
-                            linearLayout(){
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.2F)
                                 padding = dip(1)
 
-                                textView(){
+                                textView{
                                     text = "Goal Keeper"
                                     textSize = 20f
                                 }
 
                             }
-                            linearLayout(){
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.4F)
                                 padding = dip(1)
 
@@ -299,8 +287,8 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
 
                         // --- //
 
-                        linearLayout(){
-                            linearLayout(){
+                        linearLayout{
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.4F)
                                 padding = dip(1)
 
@@ -314,17 +302,17 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
                                 }
 
                             }
-                            linearLayout(){
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.2F)
                                 padding = dip(1)
 
-                                textView(){
+                                textView{
                                     text = "Defense"
                                     textSize = 20f
                                 }
 
                             }
-                            linearLayout(){
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.4F)
                                 padding = dip(1)
 
@@ -342,8 +330,8 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
 
                         // --- //
 
-                        linearLayout(){
-                            linearLayout(){
+                        linearLayout{
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.4F)
                                 padding = dip(1)
 
@@ -357,17 +345,17 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
                                 }
 
                             }
-                            linearLayout(){
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.2F)
                                 padding = dip(1)
 
-                                textView(){
+                                textView{
                                     text = "Midfield"
                                     textSize = 20f
                                 }
 
                             }
-                            linearLayout(){
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.4F)
                                 padding = dip(1)
 
@@ -385,8 +373,8 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
 
                         // --- //
 
-                        linearLayout(){
-                            linearLayout(){
+                        linearLayout{
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.4F)
                                 padding = dip(1)
 
@@ -400,17 +388,17 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
                                 }
 
                             }
-                            linearLayout(){
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.2F)
                                 padding = dip(1)
 
-                                textView(){
+                                textView{
                                     text = "Forward"
                                     textSize = 20f
                                 }
 
                             }
-                            linearLayout(){
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.4F)
                                 padding = dip(1)
 
@@ -428,8 +416,8 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
 
                         // --- //
 
-                        linearLayout(){
-                            linearLayout(){
+                        linearLayout{
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.4F)
                                 padding = dip(1)
 
@@ -443,11 +431,11 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
                                 }
 
                             }
-                            linearLayout(){
+                            linearLayout{
                                 lparams(width = 0, height = wrapContent, weight = 0.2F)
                                 padding = dip(1)
 
-                                textView(){
+                                textView{
                                     text = "Substitute"
                                     textSize = 20f
                                 }
@@ -471,7 +459,6 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
 
                         progressBar = progressBar {
                         }.lparams {
-//                            centerHorizontally()
                         }
                     }
                 }
@@ -528,17 +515,6 @@ class LagaDetailActivity : AppCompatActivity(), LagaDetailView {
             if (!favorite.isEmpty()) isFavorite = true
         }
     }
-
-    //Team
-//    private fun favoriteState(){
-//        database.use {
-//            val result = select(Favorite.TABLE_FAVORITE)
-//                .whereArgs("(TEAM_ID = {id})",
-//                    "id" to id)
-//            val favorite = result.parseList(classParser<Favorite>())
-//            if (!favorite.isEmpty()) isFavorite = true
-//        }
-//    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(detail_menu, menu)

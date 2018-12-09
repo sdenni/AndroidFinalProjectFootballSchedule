@@ -82,27 +82,16 @@ class TeamsFragment : Fragment(), AnkoComponent<Context>, TeamsView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        Log.d("TRACE", "SOME TRACE ON ")
-        (activity as AppCompatActivity).supportActionBar?.title = "Daftar Klub"
-//        (activity as AppCompatActivity).supportActionBar?.setHasOptionsMenu(true)
+        (activity as AppCompatActivity).supportActionBar?.title = resources.getString(R.string.klubheader)
         setHasOptionsMenu(true)
-//        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
-//        (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
 
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater) {
-//        super.onCreateOptionsMenu(menu, inflater)
-//        inflater.inflate(R.menu.detail_menu, menu)
-//        menuItem = menu
-////        val item = menuItem?.getItem(0)
-//        menuItem?.getItem(0)?.icon = context?.let { ContextCompat.getDrawable(it, R.drawable.ic_add_to_favorites) }
-
-//        super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.search_menu, menu)
         val item = menu?.findItem(R.id.menuSearch)
         val searchView = item?.actionView as android.widget.SearchView
-//
+
         searchView.setOnQueryTextListener(object  : android.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
@@ -127,23 +116,6 @@ class TeamsFragment : Fragment(), AnkoComponent<Context>, TeamsView {
         return super.onOptionsItemSelected(item)
     }
 
-    //    fun onOptionsItemSelected(item: MenuItem): Boolean {
-//
-//        when (item.itemId) {
-//            R.id.menuSearch -> return true
-//
-//            else -> return super.onOptionsItemSelected(item)
-//        }
-//
-//    }
-
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//
-//        menuInflater.inflate(R.menu.search_menu, menu)
-//
-//        return true
-//    }
-
     override fun createView(ui: AnkoContext<Context>): View = with(ui){
         linearLayout {
             lparams (width = matchParent, height = wrapContent)
@@ -156,11 +128,6 @@ class TeamsFragment : Fragment(), AnkoComponent<Context>, TeamsView {
                 id = R.id.spinner
             }
             swipeRefresh = swipeRefreshLayout {
-//                setColorSchemeResources(colorAccent,
-//                    android.R.color.holo_green_light,
-//                    android.R.color.holo_orange_light,
-//                    android.R.color.holo_red_light)
-
                 relativeLayout{
                     lparams (width = matchParent, height = wrapContent)
 

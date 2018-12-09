@@ -1,7 +1,6 @@
 package com.example.s_denni.googledevkotlin_finalproject_denni_1.adapters
 
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
@@ -36,18 +35,6 @@ class EnjingViewHolder(view: View) : RecyclerView.ViewHolder(view){
     private val klubScoreKatuhu: TextView = view.find(R.id.katuhu_club_scr)
 
     fun bindItem(laga: MyLaga, listener: (MyLaga) -> Unit) {
-
-//        Log.d("TRACE", "Laga Enjing")
-//        Log.d("TRACE", laga.tanggalNa)
-//        Log.d("TRACE", laga.timeNa)
-
-//        val date_string = ubahFormatTanggal(laga.tanggalNa)
-//        val time_string = ubahFormatWaktu(laga.timeNa.let { it.toString() })
-
-//        val datetime_string = laga.tanggalNa?.let { laga.timeNa?.let { it1 -> toGMTFormat(it, it1) } }
-//
-//        val date_string = fromGMTtoDate(datetime_string.toString())
-//        val time_string = fromGMTtoTime(datetime_string.toString())
 
         val date_string = laga.tanggalNa?.let { ubahFormatTanggal(it) }
         val time_string = laga.timeNa?.let { ubahFormatWaktu(it) }

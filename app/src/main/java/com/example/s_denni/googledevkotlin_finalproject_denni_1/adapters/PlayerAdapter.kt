@@ -75,66 +75,6 @@ class PlayerUI : AnkoComponent<ViewGroup> {
                     id = R.id.playerPos
                     textSize = 20f
                 }
-
-//                linearLayout() {
-//                    orientation = LinearLayout.HORIZONTAL
-//
-//                    linearLayout() {
-//                        lparams(width = 0, height = wrapContent, weight = 0.4F)
-//                        padding = dip(1)
-//
-//                        textView {
-//                            text = "Kenca Club"
-//                            id = R.id.kenca_club
-//                            textSize = 16f
-//                            textAlignment = left
-//                        }.lparams{
-//                            margin = dip(3)
-//                        }
-//
-//                        textView {
-//                            text = "scr"
-//                            id = R.id.kenca_club_scr
-//                            textSize = 16f
-//                            textAlignment = right
-//                        }.lparams{
-//                            margin = dip(2)
-//                        }
-//                    }
-//
-//                    linearLayout(){
-//                        lparams(width = 0, height = wrapContent, weight = 0.2F)
-//                        textView {
-//                            text = "VS"
-//                            textSize = 20f
-//                        }.lparams{
-//                            margin = dip(5)
-//                        }
-//                    }
-//
-//                    linearLayout() {
-//                        lparams(width = 0, height = wrapContent, weight = 0.4F)
-//                        padding = dip(1)
-//
-//                        textView {
-//                            text = "scr"
-//                            id = R.id.katuhu_club_scr
-//                            textSize = 16f
-//                            textAlignment = left
-//                        }.lparams{
-//                            margin = dip(2)
-//                        }
-//
-//                        textView {
-//                            text = "Katuhu Klub"
-//                            id = R.id.katuhu_club
-//                            textSize = 16f
-//                            textAlignment = right
-//                        }.lparams{
-//                            margin = dip(5)
-//                        }
-//                    }
-//                }
             }
         }
     }

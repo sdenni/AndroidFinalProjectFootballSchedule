@@ -6,9 +6,6 @@ import kotlinx.coroutines.async
 import java.net.URL
 
 class DataRepository {
-//    fun machenRequest(url: String): String {
-//        return URL(url).readText()
-//    }
     fun machenRequest(url: String): Deferred<String> = GlobalScope.async {
         URL(url).readText()
     }

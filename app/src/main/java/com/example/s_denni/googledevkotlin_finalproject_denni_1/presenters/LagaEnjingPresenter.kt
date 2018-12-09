@@ -16,9 +16,8 @@ class LagaEnjingPresenter (private val view: MyLagaView,
                            private val gson: Gson, private val context: CoroutineContextProvider = CoroutineContextProvider()
 ) {
 
-    fun nimmLagaEnjing(leagueStr: String?, isById: Boolean?) {
+    fun nimmLagaEnjing(leagueStr: String, isById: Boolean) {
         view.showLoading()
-
         GlobalScope.launch (context.main){
 
             if(isById.let { it == true }){
