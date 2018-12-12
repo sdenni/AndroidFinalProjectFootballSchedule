@@ -11,28 +11,20 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewPager
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.app.AppCompatActivity
-import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R
-import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.color.colorPrimaryText
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.drawable.ic_add_to_favorites
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.drawable.ic_added_to_favorites
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.menu.detail_menu
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.id.nambihan_karesep
-import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.id.timDetViewPager
-import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.string.mathes_fav_t
-import com.example.s_denni.googledevkotlin_finalproject_denni_1.R.string.teams_fav_t
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.adapters.MyFragmentPagerAdapter
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.databases.database
-import com.example.s_denni.googledevkotlin_finalproject_denni_1.fragments.MatchesFavoriteFragments
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.fragments.TeamInformationFragment
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.fragments.TeamPlayerFragment
-import com.example.s_denni.googledevkotlin_finalproject_denni_1.fragments.TeamsFavoriteFragment
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.interfaces.TeamDetailView
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.models.Favorite
 import com.example.s_denni.googledevkotlin_finalproject_denni_1.models.KlubSepakBola
@@ -50,10 +42,7 @@ import org.jetbrains.anko.db.delete
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select
 import org.jetbrains.anko.design.snackbar
-import org.jetbrains.anko.design.tabLayout
 import org.jetbrains.anko.support.v4.onRefresh
-import org.jetbrains.anko.support.v4.swipeRefreshLayout
-import org.jetbrains.anko.support.v4.viewPager
 
 /**
  * Created by root on 2/3/18.
@@ -102,72 +91,6 @@ class TeamDetailActivity : AppCompatActivity(), TeamDetailView {
 
         myView = find(R.id.viewpager_main)
         myTabs = find(R.id.tabs_main)
-
-
-//        linearLayout {
-//            lparams(width = matchParent, height = wrapContent)
-//            orientation = LinearLayout.VERTICAL
-//            backgroundColor = Color.WHITE
-//
-//            swipeRefresh = swipeRefreshLayout {
-////                setColorSchemeResources(colorAccent,
-////                        android.R.color.holo_green_light,
-////                        android.R.color.holo_orange_light,
-////                        android.R.color.holo_red_light)
-//
-//                scrollView {
-//                    isVerticalScrollBarEnabled = false
-//                    relativeLayout {
-//                        lparams(width = matchParent, height = wrapContent)
-//
-//                            linearLayout{
-//                                lparams(width = matchParent, height = wrapContent)
-//                                padding = dip(10)
-//                                orientation = LinearLayout.VERTICAL
-//                                gravity = Gravity.CENTER_HORIZONTAL
-//
-//                                teamBadge =  imageView {}.lparams(height = dip(75))
-//
-//                                teamName = textView{
-//                                    this.gravity = Gravity.CENTER
-//                                    textSize = 20f
-////                                    textColor = ContextCompat.getColor(context, colorAccent)
-//                                }.lparams{
-//                                    topMargin = dip(5)
-//                                }
-//
-//                                teamFormedYear = textView{
-//                                    this.gravity = Gravity.CENTER
-//                                }
-//
-//                                teamStadium = textView{
-//                                    this.gravity = Gravity.CENTER
-//                                    textColor = ContextCompat.getColor(context, colorPrimaryText)
-//                                }
-//
-//                                myTabs = tabLayout{
-//                                    lparams(matchParent, wrapContent)
-//                                    tabGravity = Gravity.FILL
-//                                    tabMode = TabLayout.MODE_FIXED
-//                                }
-//
-//                                myView = viewPager {
-//                                    id = timDetViewPager
-//                                }.lparams(matchParent, matchParent)
-//                                (myView!!.layoutParams as CoordinatorLayout.LayoutParams).behavior = AppBarLayout.ScrollingViewBehavior()
-//
-////                                teamDescription = textView().lparams{
-////                                    topMargin = dip(20)
-////                                }
-//                        }
-//                        progressBar = progressBar {
-//                        }.lparams {
-//                            centerHorizontally()
-//                        }
-//                    }
-//                }
-//            }
-//        }
 
         favoriteState()
         val request = DataRepository()
